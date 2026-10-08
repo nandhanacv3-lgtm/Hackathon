@@ -1,0 +1,6 @@
+.dist/
+build*/
+demo-output/
+*.vault-tmp-*
+*.key
+*.enc

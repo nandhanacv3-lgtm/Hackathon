@@ -1,0 +1,49 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "LocalVault: Build and Test",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-ExecutionPolicy",
+				"Bypass",
+				"-File",
+				"${workspaceFolder}\\scripts\\build.ps1",
+				"-Test"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+		{
+			"label": "LocalVault: Test",
+			"type": "shell",
+			"command": "ctest",
+			"args": [
+				"--test-dir",
+				"${workspaceFolder}\\build-clang",
+				"--output-on-failure"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "LocalVault: Demo",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-ExecutionPolicy",
+				"Bypass",
+				"-File",
+				"${workspaceFolder}\\scripts\\demo.ps1"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
